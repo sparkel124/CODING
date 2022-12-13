@@ -1,0 +1,107 @@
+//Bluejack Soy Factory
+
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+int main()
+{
+	int menu;
+	int index = 4;
+	int cekpr=0;
+	int sama=0;
+	char productID[101][101] = {"PR001","PR002","PR003","PR004","PR005"};
+	char productName[101][101] = {"Soy sauce", "Tofu", "Tempe", "Soy Milk", "Soy Yogurt"};
+	int quantity[101] = {7, 25, 30, 16, 10};
+	int price[100] = {21000, 3000, 2500, 6500, 18000};
+	
+	do
+	{
+		printf("Bluejack Soy Factory\n");
+		printf("Product Catalog\n");
+		printf("=====================\n");
+		printf("Menu\n");
+		printf("1. View catalog\n");
+		printf("2. Add new product\n");
+		printf("3. Update product\n");
+		printf("4. Exit\n");
+		printf("Input : \n");
+	
+		scanf("%d", &menu);
+		getchar();
+		system("cls");
+		
+		if(menu==1)
+		{
+			printf("================================================\n");
+			printf("| Product ID | Product Name | Quantity | Price |\n");
+			printf("================================================\n");
+			
+			for(int i=0; i<index; i++)
+			{
+				printf("|%-12s|%-14s|%-10d|%-7d|\n", productID[i], productName[i], quantity[i], price[i]);
+			}
+			printf("================================================\n");
+			
+
+			printf("\n");
+			printf("Press enter to back...\n");
+			getchar();
+		}
+		system("cls");
+		
+		if(menu==2)
+		{
+			printf("================================================\n");
+			printf("| Product ID | Product Name | Quantity | Price |\n");
+			printf("================================================\n");
+			
+			for(int i=0; i<index; i++)
+			{
+				printf("|%-12s|%-14s|%-10d|%-7d|\n", productID[i], productName[i], quantity[i], price[i]);
+			}
+			printf("================================================\n");
+			
+			do
+			{
+				printf("Input product id [PRXXX]: \n");
+				scanf("%s", productID[index+1]);
+				getchar;
+				
+				for(int i=0; i<1; i++)
+				{
+					if(productID[index+1][i]=='P'&&productID[index+1][i+1]=='R')
+					{
+						cekpr++;
+					}
+				}
+				for(int i=0;i<strlen(productID[index+1]);i++)
+				{
+					if(strcmp(productID[index+1], productID[i])==0)
+					{
+						sama++;
+					}
+				}
+				if(sama!=0)
+				{
+					printf("Product id %s already exist!\n", productID[index+1]);
+				}
+			}
+			while(strlen(productID[index+1])!=5||cekpr!=1||sama!=0);
+			
+			do
+			{
+				printf("Input product name [5..30]: \n");
+				scanf("%[^\n]", productName[index+1]);
+				getchar();
+				
+				for(int i=0; i<strlen(productName[index+1]); i++)
+				{
+					if
+				}
+			}
+			
+		}
+	}
+	while(menu!=4);
+}
